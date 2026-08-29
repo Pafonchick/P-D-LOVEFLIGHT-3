@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6d2435">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Ответы гостей — Павел & Дарина</title>
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="final.css">
+  <script defer src="admin.js"></script>
+</head>
+<body class="admin-page">
+  <main class="admin-shell">
+    <a class="admin-back" href="index.html">← Вернуться к приглашению</a>
+    <p class="eyebrow">Закрытая зона экипажа</p>
+    <h1>Ответы гостей</h1>
+    <section class="admin-panel">
+      <p class="admin-note">Ответы всегда сохраняются в Google Таблице на листе <strong>«Ответы»</strong>. Здесь их можно посмотреть с телефона или скачать в CSV.</p>
+      <div class="admin-settings">
+        <label>URL веб-приложения Apps Script
+          <input id="endpoint" type="url" placeholder="https://script.google.com/macros/s/.../exec" autocomplete="url">
+        </label>
+        <label>Секретный ключ
+          <input id="adminKey" type="password" placeholder="Ключ из setupWeddingRsvp" autocomplete="current-password">
+        </label>
+        <div class="admin-actions">
+          <button class="button button-primary" id="loadResponses" type="button">Получить ответы</button>
+          <button class="button" id="downloadResponses" type="button" disabled>Скачать CSV</button>
+        </div>
+      </div>
+      <div class="admin-status" id="adminStatus" role="status" aria-live="polite"></div>
+      <div class="responses-wrap">
+        <table class="responses-table" aria-label="Ответы гостей">
+          <thead><tr><th>Дата</th><th>ФИО</th><th>Присутствие</th><th>Гостей</th><th>Телефон</th><th>Комментарий</th></tr></thead>
+          <tbody id="responsesBody"><tr><td class="responses-empty" colspan="6">Укажите URL, ключ и нажмите «Получить ответы».</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
